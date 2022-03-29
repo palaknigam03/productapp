@@ -1,8 +1,9 @@
 const express = require('express');
-const bodyparser = require('body-parser');
 const mongoose = require("mongoose");
 mongoose.connect('mongodb+srv://root:root@cluster0.yozhs.mongodb.net/product?retryWrites=true&w=majority');
 const path = require('path');
+const bodyparser = require('body-parser');
+
 const port = process.env.Port || 3000
 const app = express();
 const AdminRouter = require('./routes/admin.routes');
