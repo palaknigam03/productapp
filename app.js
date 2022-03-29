@@ -3,6 +3,7 @@ const bodyparser = require('body-parser');
 const mongoose = require("mongoose");
 mongoose.connect('mongodb+srv://root:root@cluster0.yozhs.mongodb.net/product?retryWrites=true&w=majority');
 const path = require('path');
+const port = process.env.Port || 3000
 const app = express();
 const AdminRouter = require('./routes/admin.routes');
 
@@ -14,6 +15,6 @@ app.use(bodyparser.json());
 
 app.use("/api/admin",AdminRouter);
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log("Server Is Running...");
 });
