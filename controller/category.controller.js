@@ -57,6 +57,6 @@ exports.add = (request,response,next)=>{
       return response.status(201).json(result);
   })
   .catch(err=>{
-      return response.status(403).json({message: "Oops! Something went wrong.."});
+      return response.status(500).json({message: "Oops! Something went wrong.."});
   });  
 } 
