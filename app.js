@@ -4,6 +4,7 @@ mongoose.connect('mongodb+srv://root:root@cluster0.yozhs.mongodb.net/product?ret
 const path = require('path');
 const bodyparser = require('body-parser');
 const cors = require('cors');
+//const jwt = require('jsonwebtoken');
 
 const port = process.env.PORT || 3000
 const app = express();
