@@ -1,5 +1,6 @@
 const Category = require('../model/category.model');
 const {validationResult} = require('express-validator');
+const tokenVerification = require('../middleware/token_varification');
 
 
 exports.deleteCategory = (request,response)=>{
@@ -54,9 +55,11 @@ exports.add = (request,response,next)=>{
     categoryImageUrl: "https://adminproductapp.herokuapp.com/images/"+request.file.filename
   })
   .then(result=>{
+    console.log(result);
       return response.status(201).json(result);
   })
   .catch(err=>{
+    console.log(err);
       return response.status(500).json({message: "Oops! Something went wrong.."});
   });  
 } 
