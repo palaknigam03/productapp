@@ -1,6 +1,7 @@
 const Category = require('../model/category.model');
 const {validationResult} = require('express-validator');
 const tokenVerification = require('../middleware/token_varification');
+const port = process.env.PORT || 3000
 
 
 exports.deleteCategory = (request,response)=>{
