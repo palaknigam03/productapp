@@ -24,7 +24,7 @@ router.post("/add-category", tokenVerification.verifyToken, upload.single('categ
 router.get("/category-list", tokenVerification.verifyToken,
   categoryController.getCategory);
 
-router.delete("/delete/:id", categoryController.deleteCategory);
+router.post("/delete", categoryController.deleteCategory);
 
 router.post("/update", upload.array('categoryImage'),
   body('productName').not().isEmpty(),

@@ -5,7 +5,7 @@ const port = process.env.PORT || 3000
 
 
 exports.deleteCategory = (request,response)=>{
-    Category.deleteOne({_id: request.params.id})
+    Category.deleteOne({_id: request.body.id})
     .then(result=>{
       if(result.deletedCount)
         return response.status(202).json({message: 'success'});
